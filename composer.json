@@ -1,5 +1,5 @@
 {
-    "name": "anton/first_project",
+    "name": "anton-shvedov88/first_project",
     "description": "first project hexlet",
     "authors": [
         {
@@ -7,8 +7,9 @@
             "email": "ant-shvedov@yandex.ru"
         }
     ],
+    "minimum-stability": "dev",
     "require": {},
     "bin": [
-        "./brain-games.php"
+        "./bin/brain-games"
     ]
 }
