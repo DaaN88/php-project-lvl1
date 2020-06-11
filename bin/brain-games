@@ -1,4 +1,17 @@
 #!/usr/bin/env php
 <?php
 
-print_r('Welcome to the Brain Games!');
+// Путь который будет использован при глобальной установке пакета
+$autoloadGlobalPath = __DIR__ . '/../../../autoload.php';
+// Путь для локальной работы с проектом
+$autoloadLocalPath = __DIR__ . '/../vendor/autoload.php';
+
+if (file_exists($autoloadGlobalPath)) {
+    require_once $autoloadGlobalPath;
+} else {
+    require_once $autoloadLocalPath;
+}
+
+use BrainGames\Cli;
+
+print_r(Cli\run());

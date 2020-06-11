@@ -1,5 +1,9 @@
 {
     "name": "anton-shvedov88/first_project",
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ],
     "description": "first project hexlet",
     "authors": [
         {
@@ -8,7 +12,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "wp-cli/php-cli-tools": "dev-master"
+    },
     "bin": [
         "./bin/brain-games"
     ]
