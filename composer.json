@@ -1,21 +1,22 @@
 {
-    "name": "anton-shvedov88/first_project",
-    "autoload": {
-        "files": [
-            "src/Cli.php"
-        ],
-    "description": "first project hexlet",
-    "authors": [
-        {
-            "name": "Anton Shvedov",
-            "email": "ant-shvedov@yandex.ru"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "wp-cli/php-cli-tools": "dev-master"
-    },
-    "bin": [
-        "./bin/brain-games"
+  "name": "anton-shvedov88/first_project",
+  "autoload": {
+    "files": [
+      "src/Cli.php"
     ]
+  },
+  "description": "first project hexlet",
+  "authors": [
+    {
+      "name": "Anton Shvedov",
+      "email": "ant-shvedov@yandex.ru"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "wp-cli/php-cli-tools": "dev-master"
+  },
+  "bin": [
+    "./bin/brain-games"
+  ]
 }
