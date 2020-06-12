@@ -16,7 +16,7 @@ function startGame()
     $attempt = 0;
 
     while ($attempt < 3) {
-        $checkedNumber = mt_rand(0, 1000);
+        $checkedNumber = mt_rand(1, 1000);
 
         line('Question: %s', $checkedNumber);
 
@@ -31,7 +31,7 @@ function startGame()
                 "%s is wrong answer ;(. Correct answer was %s." . "\n" .
                 "Let's try again, %s!" . "\n",
                 $answer,
-                inversionAnswer($answer, $checkedNumber),
+                inversionAnswer($checkedNumber),
                 $name
             );
         }
@@ -60,10 +60,11 @@ function isYes($transmittedAnswer)
 
 //функция возвращает yes или no для указания правильного ответа когда
 //ошибся пользователь
-function inversionAnswer($transmittedAnswer, $transmittedNumber)
+function inversionAnswer($transmittedNumber)
 {
-    if (isYes($transmittedAnswer) === isEven($transmittedNumber)) {
+    if (isEven($transmittedNumber)) {
         return 'yes';
     }
+
     return 'no';
 }
