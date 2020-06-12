@@ -14,7 +14,6 @@ function startGame()
     line("Hello, %s!", $name);
 
     $attempt = 0;
-    $goodAttempt = 0;
 
     while ($attempt < 3) {
         $checkedNumber = mt_rand(0, 1000);
@@ -26,15 +25,14 @@ function startGame()
 
         if (isYes($answer) === isEven($checkedNumber)) {
             echo "Correct!" . "\n";
-            $goodAttempt++;
+            $attempt++;
         } elseif (isYes($answer) === -1) {
-            echo "'yes' is wrong answer ;(. Correct answer was 'no'." . "\n";
-            echo "Let's try again, Bill!" . "\n";
+            return "'yes' is wrong answer ;(. Correct answer was 'no'." . "\n" .
+            "Let's try again, Bill!" . "\n" . (2);
         }
-        $attempt++;
     }
 
-    if ($goodAttempt === 3) {
+    if ($attempt === 3) {
         line("Congratulations, %s", $name);
     }
 }
