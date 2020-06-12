@@ -19,7 +19,7 @@ function startGame()
     while ($attempt < 3) {
         $checkedNumber = mt_rand(0, 1000);
 
-        prompt('Question', $checkedNumber);
+        line('Question', $checkedNumber);
 
         $answer = prompt('Your answer?');
         line("%s", $answer);
@@ -29,7 +29,7 @@ function startGame()
             $goodAttempt++;
         } else {
             echo "'yes' is wrong answer ;(. Correct answer was 'no'." . "\n";
-            echo "Let's try again, Bill!";
+            echo "Let's try again, Bill!" . "\n";
         }
         $attempt++;
     }
