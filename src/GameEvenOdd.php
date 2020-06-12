@@ -28,13 +28,11 @@ function startGame()
             $attempt++;
         } elseif (isYes($answer) === -1) {
             return "'yes' is wrong answer ;(. Correct answer was 'no'." . "\n" .
-            "Let's try again, Bill!" . "\n" . (2);
+            "Let's try again, Bill!" . "\n";
         }
     }
 
-    if ($attempt === 3) {
-        line("Congratulations, %s", $name);
-    }
+    return line("Congratulations, %s", $name);
 }
 
 function isEven($transmittedNumber)
