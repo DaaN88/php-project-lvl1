@@ -28,7 +28,7 @@ function startGame()
             $attempt++;
         } else {
             return line("%s is wrong answer ;(. Correct answer was %s." . "\n" .
-              "Let's try again, %s!" . "\n", $answer, yesIsNo($checkedNumber, $answer), $name);
+              "Let's try again, %s!" . "\n", $answer, inversionAnswer($answer), $name);
         }
     }
 
@@ -51,11 +51,11 @@ function isYes($transmittedAnswer)
     return -1;
 }
 
-function yesIsNo($transmittedNumber, $transmittedAnswer)
+function inversionAnswer($transmittedAnswer)
 {
-    if (isEven($transmittedNumber) === isYes($transmittedAnswer)) {
-        return 'yes';
-    } elseif (!isEven($transmittedNumber) === !isYes($transmittedAnswer)) {
+    if ($transmittedAnswer === 'yes') {
         return 'no';
+    } elseif ($transmittedAnswer === 'no') {
+        return 'yes';
     }
 }
