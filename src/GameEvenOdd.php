@@ -26,7 +26,7 @@ function startGame()
         if (isYes($answer) === isEven($checkedNumber)) {
             echo "Correct!" . "\n";
             $attempt++;
-        } elseif (isYes($answer) === -1) {
+        } else {
             return line("'yes' is wrong answer ;(. Correct answer was 'no'." . "\n" .
             "Let's try again, %s!" . "\n", $name);
         }
