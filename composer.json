@@ -2,7 +2,8 @@
   "name": "anton-shvedov88/first_project",
   "autoload": {
     "files": [
-      "src/Cli.php"
+      "src/Cli.php",
+      "src/GameEvenOdd.php"
     ]
   },
   "description": "first project hexlet",
