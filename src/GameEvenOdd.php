@@ -27,19 +27,26 @@ function startGame()
             echo "Correct!" . "\n";
             $attempt++;
         } else {
-            return line("%s is wrong answer ;(. Correct answer was %s." . "\n" .
-              "Let's try again, %s!" . "\n", $answer, inversionAnswer($answer), $name);
+            return line(
+                "%s is wrong answer ;(. Correct answer was %s." . "\n" .
+                "Let's try again, %s!" . "\n",
+                $answer,
+                inversionAnswer($answer, $checkedNumber),
+                $name
+            );
         }
     }
 
-    return line("Congratulations, %s", $name);
+    return line("Congratulations, %s!", $name);
 }
 
+//функция проверяет четное или нечетное число; возвращает true или false
 function isEven($transmittedNumber)
 {
     return $transmittedNumber % 2 === 0;
 }
 
+//функция проверяет что ввел пользователь и возвращает true или false
 function isYes($transmittedAnswer)
 {
     if ($transmittedAnswer === 'yes') {
@@ -51,11 +58,12 @@ function isYes($transmittedAnswer)
     return -1;
 }
 
-function inversionAnswer($transmittedAnswer)
+//функция возвращает yes или no для указания правильного ответа когда
+//ошибся пользователь
+function inversionAnswer($transmittedAnswer, $transmittedNumber)
 {
-    if ($transmittedAnswer === 'yes') {
-        return 'no';
-    } elseif ($transmittedAnswer === 'no') {
+    if (isYes($transmittedAnswer) === isEven($transmittedNumber)) {
         return 'yes';
     }
+    return 'no';
 }
