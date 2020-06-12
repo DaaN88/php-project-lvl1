@@ -27,8 +27,8 @@ function startGame()
             echo "Correct!" . "\n";
             $attempt++;
         } else {
-            return line("%s is wrong answer ;(. Correct answer was 'no'." . "\n" .
-            "Let's try again, %s!" . "\n", $answer, $name);
+            return line("%s is wrong answer ;(. Correct answer was %s." . "\n" .
+              "Let's try again, %s!" . "\n", $answer, yesIsNo($checkedNumber, $answer), $name);
         }
     }
 
@@ -49,4 +49,13 @@ function isYes($transmittedAnswer)
     }
 
     return -1;
+}
+
+function yesIsNo($transmittedNumber, $transmittedAnswer)
+{
+    if (isEven($transmittedNumber) === isYes($transmittedAnswer)) {
+        return 'yes';
+    } elseif (!isEven($transmittedNumber) === !isYes($transmittedAnswer)) {
+        return 'no';
+    }
 }
