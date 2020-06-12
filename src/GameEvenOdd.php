@@ -24,10 +24,10 @@ function startGame()
         $answer = prompt('Your answer?');
         line("%s", $answer);
 
-        if ($answer === 'yes' && isEven($checkedNumber)) {
+        if (($answer === 'yes' && isEven($checkedNumber)) || ($answer === 'no' && !isEven($checkedNumber))) {
             echo "Correct!";
             $goodAttempt++;
-        } else {
+        } elseif ($answer !== 'yes' || $answer !== 'no') {
             echo "'yes' is wrong answer ;(. Correct answer was 'no'." . "\n";
             echo "Let's try again, Bill!" . "\n";
         }
