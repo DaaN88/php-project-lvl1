@@ -19,7 +19,7 @@ function startGame()
     while ($attempt < 3) {
         $checkedNumber = mt_rand(0, 1000);
 
-        line('Question', $checkedNumber);
+        line('Question: %s', $checkedNumber);
 
         $answer = prompt('Your answer?');
         line("%s", $answer);
