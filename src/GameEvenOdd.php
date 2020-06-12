@@ -27,8 +27,8 @@ function startGame()
             echo "Correct!" . "\n";
             $attempt++;
         } else {
-            return line("'yes' is wrong answer ;(. Correct answer was 'no'." . "\n" .
-            "Let's try again, %s!" . "\n", $name);
+            return line("%s is wrong answer ;(. Correct answer was 'no'." . "\n" .
+            "Let's try again, %s!" . "\n", $answer, $name);
         }
     }
 
