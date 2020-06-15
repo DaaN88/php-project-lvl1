@@ -12,6 +12,6 @@ if (file_exists($autoloadGlobalPath)) {
     require_once $autoloadLocalPath;
 }
 
-use BrainEven\GameEvenOdd;
+use function BrainGames\Games\GameEvenOdd\startGame;
 
-GameEvenOdd\startGame();
+startGame();

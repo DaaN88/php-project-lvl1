@@ -3,8 +3,8 @@
   "autoload": {
     "files": [
       "src/Cli.php",
-      "games/GameEvenOdd.php",
-      "games/GameCalculator.php"
+      "Games/GameEvenOdd.php",
+      "Games/GameCalculator.php"
     ]
   },
   "description": "first project hexlet",
