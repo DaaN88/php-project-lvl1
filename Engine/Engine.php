@@ -24,9 +24,8 @@ function startEngineGame($messageGame, $expressionsAndAnswers)
     //(значение в извлеченном массиве)
     while ($attempt < 3) {
         $pairExpressionAndAnswer = array_pop($expressionsAndAnswers);
-
-        $stringExpression = key($pairExpressionAndAnswer);
-        $verifiableNumber = $pairExpressionAndAnswer[key($pairExpressionAndAnswer)];
+        $stringExpression = $pairExpressionAndAnswer['stringWithQuestion'];
+        $verifiableNumber = $pairExpressionAndAnswer['stringWithAnswer'];
 
         line('Question, %s', $stringExpression);
 

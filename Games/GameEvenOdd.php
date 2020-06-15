@@ -12,7 +12,10 @@ function startGame()
         $checkedNumber = mt_rand(1, 1000);
         $stringExpression = (string)$checkedNumber;
 
-        $expressionsAndAnswers[$i] = [$stringExpression => isEven($checkedNumber)];
+        $expressionsAndAnswers[$i] = [
+                                        "stringWithQuestion" => $stringExpression,
+                                        "stringWithAnswer" => isEven($checkedNumber)
+                                     ];
     }
 
     startEngineGame(

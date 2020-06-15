@@ -12,14 +12,14 @@ function startGCDGame()
         $firstNumber = mt_rand(1, 1000);
         $secondNumber = mt_rand(1, 1000);
 
-        $stringExpression = $firstNumber . " " . $secondNumber;
+        $question = $firstNumber . " " . $secondNumber;
 
         $expressionsAndAnswers[$i] = [
-            $stringExpression =>
-            findGCD(
+            "stringWithQuestion" => $question,
+            "stringWithAnswer" => findGCD(
                 $firstNumber,
                 $secondNumber
-            )
+            ),
         ];
     }
 

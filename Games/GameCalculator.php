@@ -15,11 +15,11 @@ function startCalcGame()
         $arrayOperations = ['+', '-', '*'];
         $operations = $arrayOperations[mt_rand(0, count($arrayOperations) - 1)];
 
-        $stringExpression = $firstNumber . " " . $operations . " " . $secondNumber;
+        $question = $firstNumber . " " . $operations . " " . $secondNumber;
 
         $expressionsAndAnswers[$i] = [
-                                        (string)$stringExpression =>
-                                        evaluateExpression(
+                                        "stringWithQuestion" => $question,
+                                        "stringWithAnswer" => evaluateExpression(
                                             $firstNumber,
                                             $operations,
                                             $secondNumber
