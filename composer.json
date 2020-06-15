@@ -4,7 +4,8 @@
     "files": [
       "src/Cli.php",
       "Games/GameEvenOdd.php",
-      "Games/GameCalculator.php"
+      "Games/GameCalculator.php",
+      "Engine/Engine.php"
     ]
   },
   "description": "first project hexlet",

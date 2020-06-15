@@ -2,46 +2,35 @@
 
 namespace BrainGames\Games\GameCalculator;
 
-use function cli\line;
-use function cli\prompt;
+use function BrainGames\Engine\Engine\startEngineGame;
 
 function startCalcGame()
 {
-    line('Welcome to the Brain Game!');
-    line('What is the result of the expression?');
+    $expressionsAndAnswers = [];
 
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
-
-    $attempt = 0;
-
-    while ($attempt < 3) {
+    for ($i = 0; $i < 3; $i++) {
         $firstNumber = mt_rand(1, 1000);
         $secondNumber = mt_rand(1, 1000);
 
         $arrayOperations = ['+', '-', '*'];
         $operations = $arrayOperations[mt_rand(0, count($arrayOperations) - 1)];
 
-        line('Question, %s %s %s', $firstNumber, $operations, $secondNumber);
+        $stringExpression = $firstNumber . " " . $operations . " " . $secondNumber;
 
-        $answer = prompt('Your answer?');
-        line("%s", $answer);
-
-        if ((int)$answer === evaluateExpression($firstNumber, $operations, $secondNumber)) {
-            echo "Correct!" . "\n";
-            $attempt++;
-        } else {
-            return line(
-                "%s is wrong answer ;(. Correct answer was %s." . "\n"
-                . "Let's try again, %s!",
-                $answer,
-                evaluateExpression($firstNumber, $operations, $secondNumber),
-                $name
-            );
-        }
+        $expressionsAndAnswers[$i] = [
+                                        (string)$stringExpression =>
+                                        evaluateExpression(
+                                            $firstNumber,
+                                            $operations,
+                                            $secondNumber
+                                        )
+                                     ];
     }
 
-    return line("Congratulations, %s!", $name);
+    startEngineGame(
+        'What is the result of the expression?',
+        $expressionsAndAnswers
+    );
 }
 
 function evaluateExpression($transmittedFirstNumber, $transmittedOperations, $transmittedSecondNumber)
@@ -60,5 +49,5 @@ function evaluateExpression($transmittedFirstNumber, $transmittedOperations, $tr
             break;
     }
 
-    return $result;
+    return (int)$result;
 }
