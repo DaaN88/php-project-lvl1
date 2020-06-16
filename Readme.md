@@ -6,3 +6,5 @@
 [![asciicast](https://asciinema.org/a/60lW2o5H76vMsgONiiD8OWPCu.svg)](https://asciinema.org/a/60lW2o5H76vMsgONiiD8OWPCu)
 7 stage php project lvl-1 (brain-gcd):
 [![asciicast](https://asciinema.org/a/0HB6gOom7eOL83bgz1LyAN1ai.svg)](https://asciinema.org/a/0HB6gOom7eOL83bgz1LyAN1ai)
+8 stage php project lvl-1 (brain-progression):
+[![asciicast](https://asciinema.org/a/SS09ehfOQArrVqC7P4WHc58Ab.svg)](https://asciinema.org/a/SS09ehfOQArrVqC7P4WHc58Ab)
