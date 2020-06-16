@@ -54,10 +54,10 @@ function startEngineGame($messageGame, $expressionsAndAnswers)
 function checkedAnswer($verifiableAnswer)
 {
     if ($verifiableAnswer === 'yes') {
-        return true;
+        return 'yes';
     } elseif (is_numeric($verifiableAnswer)) {
         return (int)$verifiableAnswer;
     }
 
-    return false;
+    return 'no';
 }

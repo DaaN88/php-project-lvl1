@@ -27,5 +27,9 @@ function startGame()
 //функция проверяет четное или нечетное число; возвращает true или false
 function isEven($transmittedNumber)
 {
-    return $transmittedNumber % 2 === 0;
+    if ($transmittedNumber % 2 === 0) {
+        return 'yes';
+    }
+
+    return 'no';
 }

@@ -24,7 +24,7 @@ function startGCDGame()
     }
 
     startEngineGame(
-        'What is the result of the expression?',
+        'Find the greatest common divisor of given numbers.',
         $expressionsAndAnswers
     );
 }
