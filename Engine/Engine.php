@@ -55,9 +55,11 @@ function checkedAnswer($verifiableAnswer)
 {
     if ($verifiableAnswer === 'yes') {
         return 'yes';
+    } elseif ($verifiableAnswer === 'no') {
+        return 'no';
     } elseif (is_numeric($verifiableAnswer)) {
         return (int)$verifiableAnswer;
     }
 
-    return 'no';
+    return false;
 }
