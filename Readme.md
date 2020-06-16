@@ -8,3 +8,5 @@
 [![asciicast](https://asciinema.org/a/0HB6gOom7eOL83bgz1LyAN1ai.svg)](https://asciinema.org/a/0HB6gOom7eOL83bgz1LyAN1ai)
 8 stage php project lvl-1 (brain-progression):<br/>
 [![asciicast](https://asciinema.org/a/SS09ehfOQArrVqC7P4WHc58Ab.svg)](https://asciinema.org/a/SS09ehfOQArrVqC7P4WHc58Ab)
+9 stage php project lvl-1 (brain-prime):
+[![asciicast](https://asciinema.org/a/zWPXh45x1WO1a8JVu13OtLVZ4.svg)](https://asciinema.org/a/zWPXh45x1WO1a8JVu13OtLVZ4)
