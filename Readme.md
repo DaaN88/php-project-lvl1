@@ -1,5 +1,19 @@
 <a href="https://codeclimate.com/github/DaaN88/php-project-lvl1"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 ![php_сodesniffer](https://github.com/DaaN88/php-project-lvl1/workflows/php_%D1%81odesniffer/badge.svg)<br/>
+
+Пакет представляет собой сборник из 5 консольных игр:<br/>
+- четное ли число;<br/>
+- вычислить арифметическую операцию;<br/>
+- найти НОД;<br/>
+- указать пропущенное число в арифметической прогрессии;<br/>
+- ответить, является ли число простым.<br/>
+Установка пакета:<br/>
+- глобально: <code>composer global require anton-shvedov88@yandex.ru</code>;<br/>
+- локально: <code>composer require anton-shvedov88@yandex.ru</code>;<br/>
+Требования:
+php-version: от 7.0;<br/>
+composer-version: от 1.10.6;<br/>
+
 Игра brain-even:<br/>
 [![asciicast](https://asciinema.org/a/arQQlpNskxaHcd7Fsr2KJJSIE.svg)](https://asciinema.org/a/arQQlpNskxaHcd7Fsr2KJJSIE)<br/>
 Запуск игры:<br/>
