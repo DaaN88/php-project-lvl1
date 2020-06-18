@@ -2,12 +2,11 @@
   "name": "anton-shvedov88/first_project",
   "autoload": {
     "files": [
-      "src/Cli.php",
-      "src/Games/GameEvenOdd.php",
-      "src/Games/GameCalculator.php",
-      "src/Games/GameGCD.php",
-      "src/Games/GameProgression.php",
-      "src/Games/GamePrime.php",
+      "src/Games/EvenOdd.php",
+      "src/Games/Calculator.php",
+      "src/Games/GCD.php",
+      "src/Games/Progression.php",
+      "src/Games/Prime.php",
       "src/Engine/Engine.php"
     ]
   },
@@ -22,7 +21,6 @@
     "wp-cli/php-cli-tools": "^0.11.11"
   },
   "bin": [
-    "./bin/brain-games",
     "./bin/brain-even",
     "./bin/brain-calc",
     "./bin/brain-gcd",
