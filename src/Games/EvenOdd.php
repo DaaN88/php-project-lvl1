@@ -8,14 +8,13 @@ function startGameEvenOdd()
 {
     $expressionsAndAnswers = [];
 
-    for ($i = 0; $i < QUANTITY_ATTEMPT; $i++) {
-        $number = mt_rand(1, 1000);
-        $question = (string)$number;
+    for ($i = 0; $i < GAME_ROUND; $i++) {
+        $number = random_int(1, 1000);
 
         $expressionsAndAnswers[$i] = [
-                                        "question" => $question,
-                                        "expectedAnswer" => ifEvenYesElseNo($number)
-                                     ];
+          "question" => $number,
+          "expectedAnswer" => isEven($number) ? 'yes' : 'no',
+        ];
     }
 
     startGameEngine(
@@ -25,11 +24,11 @@ function startGameEvenOdd()
 }
 
 //функция проверяет четное или нечетное число; возвращает true или false
-function ifEvenYesElseNo($verifiableNumber)
+function isEven($verifiableNumber)
 {
     if ($verifiableNumber % 2 === 0) {
-        return 'yes';
+        return true;
     }
 
-    return 'no';
+    return false;
 }

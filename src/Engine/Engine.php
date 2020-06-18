@@ -2,6 +2,7 @@
 
 namespace BrainGames\Engine\Engine;
 
+use function BrainGames\Games\Progression\returnChangedProgression;
 use function cli\line;
 use function cli\prompt;
 

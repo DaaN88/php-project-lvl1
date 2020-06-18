@@ -1,3 +1,3 @@
 <?php
 
-define("QUANTITY_ATTEMPT", 3);
+const GAME_ROUND = 3;

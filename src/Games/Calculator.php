@@ -8,18 +8,18 @@ function startCalcGame()
 {
     $expressionsAndAnswers = [];
 
-    for ($i = 0; $i < 3; $i++) {
-        $firstNumber = mt_rand(1, 1000);
-        $secondNumber = mt_rand(1, 1000);
+    for ($i = 0; $i < GAME_ROUND; $i++) {
+        $firstNumber = random_int(1, 1000);
+        $secondNumber = random_int(1, 1000);
 
         $arithmeticOperations = ['+', '-', '*'];
-        $operation = $arithmeticOperations[mt_rand(0, count($arithmeticOperations) - 1)];
+        $operation = $arithmeticOperations[array_rand($arithmeticOperations)];
 
         $question = $firstNumber . " " . $operation . " " . $secondNumber;
 
         $expressionsAndAnswers[$i] = [
                                         "question" => $question,
-                                        "expectedAnswer" => evaluateExpression(
+                                        "expectedAnswer" => (string)evaluateExpression(
                                             $firstNumber,
                                             $operation,
                                             $secondNumber
@@ -33,11 +33,8 @@ function startCalcGame()
     );
 }
 
-function evaluateExpression(
-    $transmittedFirstNumber,
-    $transmittedOperations,
-    $transmittedSecondNumber
-): string {
+function evaluateExpression($transmittedFirstNumber, $transmittedOperations, $transmittedSecondNumber)
+{
     $result = 0;
 
     switch ($transmittedOperations) {
@@ -52,5 +49,5 @@ function evaluateExpression(
             break;
     }
 
-    return (string)$result;
+    return $result;
 }

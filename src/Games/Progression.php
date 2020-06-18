@@ -8,10 +8,10 @@ function startGameProgression()
 {
     $expressionsAndAnswers = [];
 
-    for ($i = 0; $i < 3; $i++) {
-        $indexHiddenElement = mt_rand(0, 9);
-        $firstNumberProgression = mt_rand(0, 100);
-        $progressionStep = mt_rand(2, 10);
+    for ($i = 0; $i < GAME_ROUND; $i++) {
+        $indexHiddenElement = random_int(0, 9);
+        $firstNumberProgression = random_int(0, 100);
+        $progressionStep = random_int(2, 10);
         $arithmeticProgression = [];
 
         //создаем и заполняем прогрессию
@@ -21,7 +21,7 @@ function startGameProgression()
         }
 
         $expressionsAndAnswers[$i] = [
-            "question" => hideProgressionElement($arithmeticProgression, $indexHiddenElement),
+            "question" => implode(' ', hideProgressionElement($arithmeticProgression, $indexHiddenElement)),
             "expectedAnswer" => (string)$arithmeticProgression[$indexHiddenElement],
         ];
     }
@@ -36,10 +36,5 @@ function hideProgressionElement($progression, $indexOfHiddenElement)
 {
     $progression[$indexOfHiddenElement] = '..';
 
-    return returnChangedProgression($progression);
-}
-
-function returnChangedProgression($progression)
-{
-    return implode(' ', $progression);
+    return $progression;
 }

@@ -8,12 +8,12 @@ function startGamePrime()
 {
     $expressionsAndAnswers = [];
 
-    for ($i = 0; $i < 3; $i++) {
-        $number = mt_rand(0, 1000);
+    for ($i = 0; $i < GAME_ROUND; $i++) {
+        $number = random_int(0, 1000);
 
         $expressionsAndAnswers[$i] = [
           "question" => $number,
-          "expectedAnswer" => ifPrimeYesElseNo($number),
+          "expectedAnswer" => isPrime($number) ? 'yes' : 'no',
         ];
     }
 
@@ -23,18 +23,18 @@ function startGamePrime()
     );
 }
 
-function ifPrimeYesElseNo($verifiableNumber)
+function isPrime($verifiableNumber)
 {
     if ($verifiableNumber <= 1) {
-        return 'no';
+        return false;
     }
 
     $squaredNumber = sqrt($verifiableNumber);
 
     for ($i = 2; $i <= $squaredNumber; $i++) {
         if ($verifiableNumber % $i === 0) {
-            return 'no';
+            return false;
         }
     }
-    return 'yes';
+    return true;
 }

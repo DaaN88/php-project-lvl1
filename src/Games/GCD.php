@@ -8,15 +8,15 @@ function startGCDGame()
 {
     $expressionsAndAnswers = [];
 
-    for ($i = 0; $i < 3; $i++) {
-        $firstNumber = mt_rand(1, 1000);
-        $secondNumber = mt_rand(1, 1000);
+    for ($i = 0; $i < GAME_ROUND; $i++) {
+        $firstNumber = random_int(1, 1000);
+        $secondNumber = random_int(1, 1000);
 
         $question = $firstNumber . " " . $secondNumber;
 
         $expressionsAndAnswers[$i] = [
             "question" => $question,
-            "expectedAnswer" => findGCD(
+            "expectedAnswer" => (string)findGCD(
                 $firstNumber,
                 $secondNumber
             ),
@@ -29,7 +29,7 @@ function startGCDGame()
     );
 }
 
-function findGCD($verifiableFirstNumber, $verifiableSecondNumber): string
+function findGCD($verifiableFirstNumber, $verifiableSecondNumber)
 {
     while ($verifiableSecondNumber !== 0) {
         $buffer = $verifiableFirstNumber % $verifiableSecondNumber;
