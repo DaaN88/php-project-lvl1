@@ -7,6 +7,7 @@ use function BrainGames\Engine\Engine\startGameEngine;
 function startGameProgression()
 {
     $expressionsAndAnswers = [];
+    $ruleOfGame = 'What number is missing in the progression?';
 
     for ($i = 0; $i < GAME_ROUND; $i++) {
         $indexHiddenElement = random_int(0, 9);
@@ -27,7 +28,7 @@ function startGameProgression()
     }
 
     startGameEngine(
-        'What number is missing in the progression?',
+        $ruleOfGame,
         $expressionsAndAnswers
     );
 }

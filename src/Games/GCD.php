@@ -7,6 +7,7 @@ use function BrainGames\Engine\Engine\startGameEngine;
 function startGCDGame()
 {
     $expressionsAndAnswers = [];
+    $ruleOfGame = 'Find the greatest common divisor of given numbers.';
 
     for ($i = 0; $i < GAME_ROUND; $i++) {
         $firstNumber = random_int(1, 1000);
@@ -24,17 +25,17 @@ function startGCDGame()
     }
 
     startGameEngine(
-        'Find the greatest common divisor of given numbers.',
+        $ruleOfGame,
         $expressionsAndAnswers
     );
 }
 
-function findGCD($verifiableFirstNumber, $verifiableSecondNumber)
+function findGCD($firstNumber, $secondNumber)
 {
-    while ($verifiableSecondNumber !== 0) {
-        $buffer = $verifiableFirstNumber % $verifiableSecondNumber;
-        $verifiableFirstNumber = $verifiableSecondNumber;
-        $verifiableSecondNumber = $buffer;
+    while ($secondNumber !== 0) {
+        $buffer = $firstNumber % $secondNumber;
+        $firstNumber = $secondNumber;
+        $secondNumber = $buffer;
     }
-    return $verifiableFirstNumber;
+    return $firstNumber;
 }

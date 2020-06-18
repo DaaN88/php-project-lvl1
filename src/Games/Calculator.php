@@ -7,6 +7,7 @@ use function BrainGames\Engine\Engine\startGameEngine;
 function startCalcGame()
 {
     $expressionsAndAnswers = [];
+    $ruleOfGame = 'What is the result of the expression?';
 
     for ($i = 0; $i < GAME_ROUND; $i++) {
         $firstNumber = random_int(1, 1000);
@@ -28,24 +29,24 @@ function startCalcGame()
     }
 
     startGameEngine(
-        'What is the result of the expression?',
+        $ruleOfGame,
         $expressionsAndAnswers
     );
 }
 
-function evaluateExpression($transmittedFirstNumber, $transmittedOperations, $transmittedSecondNumber)
+function evaluateExpression($firstOperand, $operation, $secondOperand)
 {
     $result = 0;
 
-    switch ($transmittedOperations) {
+    switch ($operation) {
         case '+':
-            $result = $transmittedFirstNumber + $transmittedSecondNumber;
+            $result = $firstOperand + $secondOperand;
             break;
         case '-':
-            $result = $transmittedFirstNumber - $transmittedSecondNumber;
+            $result = $firstOperand - $secondOperand;
             break;
         case '*':
-            $result = $transmittedFirstNumber * $transmittedSecondNumber;
+            $result = $firstOperand * $secondOperand;
             break;
     }
 

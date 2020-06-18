@@ -7,6 +7,7 @@ use function BrainGames\Engine\Engine\startGameEngine;
 function startGameEvenOdd()
 {
     $expressionsAndAnswers = [];
+    $ruleOfGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
     for ($i = 0; $i < GAME_ROUND; $i++) {
         $number = random_int(1, 1000);
@@ -18,15 +19,15 @@ function startGameEvenOdd()
     }
 
     startGameEngine(
-        'Answer "yes" if the number is even, otherwise answer "no".',
+        $ruleOfGame,
         $expressionsAndAnswers
     );
 }
 
 //функция проверяет четное или нечетное число; возвращает true или false
-function isEven($verifiableNumber)
+function isEven($number)
 {
-    if ($verifiableNumber % 2 === 0) {
+    if ($number % 2 === 0) {
         return true;
     }
 

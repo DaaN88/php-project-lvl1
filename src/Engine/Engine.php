@@ -6,10 +6,10 @@ use function BrainGames\Games\Progression\returnChangedProgression;
 use function cli\line;
 use function cli\prompt;
 
-function startGameEngine($ruleGame, $questionsAndAnswers)
+function startGameEngine($ruleOfGame, $questionsAndAnswers)
 {
     line('Welcome to the Brain Game!');
-    line('%s', $ruleGame);
+    line('%s', $ruleOfGame);
 
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
