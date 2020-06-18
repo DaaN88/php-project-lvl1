@@ -3,12 +3,12 @@
   "autoload": {
     "files": [
       "src/Cli.php",
-      "Games/GameEvenOdd.php",
-      "Games/GameCalculator.php",
-      "Games/GameGCD.php",
-      "Games/GameProgression.php",
-      "Games/GamePrime.php",
-      "Engine/Engine.php"
+      "src/Games/GameEvenOdd.php",
+      "src/Games/GameCalculator.php",
+      "src/Games/GameGCD.php",
+      "src/Games/GameProgression.php",
+      "src/Games/GamePrime.php",
+      "src/Engine/Engine.php"
     ]
   },
   "description": "first project hexlet",
