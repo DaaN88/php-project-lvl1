@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\Games\GameGCD;
+namespace BrainGames\Games\GCD;
 
-use function BrainGames\Engine\Engine\startEngineGame;
+use function BrainGames\Engine\Engine\startGameEngine;
 
 function startGCDGame()
 {
@@ -15,26 +15,26 @@ function startGCDGame()
         $question = $firstNumber . " " . $secondNumber;
 
         $expressionsAndAnswers[$i] = [
-            "stringWithQuestion" => $question,
-            "stringWithAnswer" => findGCD(
+            "question" => $question,
+            "expectedAnswer" => findGCD(
                 $firstNumber,
                 $secondNumber
             ),
         ];
     }
 
-    startEngineGame(
+    startGameEngine(
         'Find the greatest common divisor of given numbers.',
         $expressionsAndAnswers
     );
 }
 
-function findGCD($transmittedFirstNumber, $transmittedSecondNumber)
+function findGCD($verifiableFirstNumber, $verifiableSecondNumber): string
 {
-    while ($transmittedSecondNumber !== 0) {
-        $buffer = $transmittedFirstNumber % $transmittedSecondNumber;
-        $transmittedFirstNumber = $transmittedSecondNumber;
-        $transmittedSecondNumber = $buffer;
+    while ($verifiableSecondNumber !== 0) {
+        $buffer = $verifiableFirstNumber % $verifiableSecondNumber;
+        $verifiableFirstNumber = $verifiableSecondNumber;
+        $verifiableSecondNumber = $buffer;
     }
-    return $transmittedFirstNumber;
+    return $verifiableFirstNumber;
 }

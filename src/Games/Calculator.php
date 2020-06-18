@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainGames\Games\GameCalculator;
+namespace BrainGames\Games\Calculator;
 
-use function BrainGames\Engine\Engine\startEngineGame;
+use function BrainGames\Engine\Engine\startGameEngine;
 
 function startCalcGame()
 {
@@ -12,29 +12,32 @@ function startCalcGame()
         $firstNumber = mt_rand(1, 1000);
         $secondNumber = mt_rand(1, 1000);
 
-        $arrayOperations = ['+', '-', '*'];
-        $operations = $arrayOperations[mt_rand(0, count($arrayOperations) - 1)];
+        $arithmeticOperations = ['+', '-', '*'];
+        $operation = $arithmeticOperations[mt_rand(0, count($arithmeticOperations) - 1)];
 
-        $question = $firstNumber . " " . $operations . " " . $secondNumber;
+        $question = $firstNumber . " " . $operation . " " . $secondNumber;
 
         $expressionsAndAnswers[$i] = [
-                                        "stringWithQuestion" => $question,
-                                        "stringWithAnswer" => evaluateExpression(
+                                        "question" => $question,
+                                        "expectedAnswer" => evaluateExpression(
                                             $firstNumber,
-                                            $operations,
+                                            $operation,
                                             $secondNumber
                                         )
                                      ];
     }
 
-    startEngineGame(
+    startGameEngine(
         'What is the result of the expression?',
         $expressionsAndAnswers
     );
 }
 
-function evaluateExpression($transmittedFirstNumber, $transmittedOperations, $transmittedSecondNumber)
-{
+function evaluateExpression(
+    $transmittedFirstNumber,
+    $transmittedOperations,
+    $transmittedSecondNumber
+): string {
     $result = 0;
 
     switch ($transmittedOperations) {
@@ -49,5 +52,5 @@ function evaluateExpression($transmittedFirstNumber, $transmittedOperations, $tr
             break;
     }
 
-    return (int)$result;
+    return (string)$result;
 }

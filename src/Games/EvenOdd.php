@@ -1,33 +1,33 @@
 <?php
 
-namespace BrainGames\Games\GameEvenOdd;
+namespace BrainGames\Games\EvenOdd;
 
-use function BrainGames\Engine\Engine\startEngineGame;
+use function BrainGames\Engine\Engine\startGameEngine;
 
-function startGame()
+function startGameEvenOdd()
 {
     $expressionsAndAnswers = [];
 
-    for ($i = 0; $i < 3; $i++) {
-        $checkedNumber = mt_rand(1, 1000);
-        $stringExpression = (string)$checkedNumber;
+    for ($i = 0; $i < QUANTITY_ATTEMPT; $i++) {
+        $number = mt_rand(1, 1000);
+        $question = (string)$number;
 
         $expressionsAndAnswers[$i] = [
-                                        "question" => $stringExpression,
-                                        "expectedAnswer" => ifEvenYesElseNo($checkedNumber)
+                                        "question" => $question,
+                                        "expectedAnswer" => ifEvenYesElseNo($number)
                                      ];
     }
 
-    startEngineGame(
+    startGameEngine(
         'Answer "yes" if the number is even, otherwise answer "no".',
         $expressionsAndAnswers
     );
 }
 
 //функция проверяет четное или нечетное число; возвращает true или false
-function ifEvenYesElseNo($transmittedNumber)
+function ifEvenYesElseNo($verifiableNumber)
 {
-    if ($transmittedNumber % 2 === 0) {
+    if ($verifiableNumber % 2 === 0) {
         return 'yes';
     }
 

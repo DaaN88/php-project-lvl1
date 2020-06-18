@@ -1,38 +1,38 @@
 <?php
 
-namespace BrainGames\Games\GamePrime;
+namespace BrainGames\Games\Prime;
 
-use function BrainGames\Engine\Engine\startEngineGame;
+use function BrainGames\Engine\Engine\startGameEngine;
 
 function startGamePrime()
 {
     $expressionsAndAnswers = [];
 
     for ($i = 0; $i < 3; $i++) {
-        $primeNumber = mt_rand(0, 1000);
+        $number = mt_rand(0, 1000);
 
         $expressionsAndAnswers[$i] = [
-          "stringWithQuestion" => $primeNumber,
-          "stringWithAnswer" => isPrime($primeNumber),
+          "question" => $number,
+          "expectedAnswer" => ifPrimeYesElseNo($number),
         ];
     }
 
-    startEngineGame(
+    startGameEngine(
         'Answer "yes" if given number is prime. Otherwise answer "no".',
         $expressionsAndAnswers
     );
 }
 
-function isPrime($transmittedNumber)
+function ifPrimeYesElseNo($verifiableNumber)
 {
-    if ($transmittedNumber === 1 || $transmittedNumber === 0) {
+    if ($verifiableNumber <= 1) {
         return 'no';
     }
 
-    $sqrtNumber = sqrt($transmittedNumber);
+    $squaredNumber = sqrt($verifiableNumber);
 
-    for ($i = 2; $i <= $sqrtNumber; $i++) {
-        if ($transmittedNumber % $i === 0) {
+    for ($i = 2; $i <= $squaredNumber; $i++) {
+        if ($verifiableNumber % $i === 0) {
             return 'no';
         }
     }

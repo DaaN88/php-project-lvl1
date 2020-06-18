@@ -1,40 +1,45 @@
 <?php
 
-namespace BrainGames\Games\GameProgression;
+namespace BrainGames\Games\Progression;
 
-use function BrainGames\Engine\Engine\startEngineGame;
+use function BrainGames\Engine\Engine\startGameEngine;
 
 function startGameProgression()
 {
     $expressionsAndAnswers = [];
 
     for ($i = 0; $i < 3; $i++) {
-        $indexInProgression = mt_rand(0, 9);
-        $memberProgression = mt_rand(0, 100);
+        $indexHiddenElement = mt_rand(0, 9);
+        $firstNumberProgression = mt_rand(0, 100);
         $progressionStep = mt_rand(2, 10);
-        $progression = [];
+        $arithmeticProgression = [];
 
         //создаем и заполняем прогрессию
         for ($k = 0; $k < 10; $k++) {
-            $memberProgression += $progressionStep;
-            $progression[] = $memberProgression;
+            $firstNumberProgression += $progressionStep;
+            $arithmeticProgression[] = $firstNumberProgression;
         }
 
         $expressionsAndAnswers[$i] = [
-            "stringWithQuestion" => elementSubstitution($progression, $indexInProgression),
-            "stringWithAnswer" => $progression[$indexInProgression],
+            "question" => hideProgressionElement($arithmeticProgression, $indexHiddenElement),
+            "expectedAnswer" => (string)$arithmeticProgression[$indexHiddenElement],
         ];
     }
 
-    startEngineGame(
+    startGameEngine(
         'What number is missing in the progression?',
         $expressionsAndAnswers
     );
 }
 
-function elementSubstitution($transmittedArray, $transmittedIndex)
+function hideProgressionElement($progression, $indexOfHiddenElement)
 {
-    $transmittedArray[$transmittedIndex] = '..';
+    $progression[$indexOfHiddenElement] = '..';
 
-    return implode(' ', $transmittedArray);
+    return returnChangedProgression($progression);
+}
+
+function returnChangedProgression($progression)
+{
+    return implode(' ', $progression);
 }

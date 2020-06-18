@@ -5,10 +5,10 @@ namespace BrainGames\Engine\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function startEngineGame($messageGame, $expressionsAndAnswers)
+function startGameEngine($ruleGame, $questionsAndAnswers)
 {
     line('Welcome to the Brain Game!');
-    line('%s', $messageGame);
+    line('%s', $ruleGame);
 
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
@@ -19,10 +19,10 @@ function startEngineGame($messageGame, $expressionsAndAnswers)
     //присваиваем $question = вопрос (первый элемент) из массива;
     //$expectedAnswer = это правильный ответ полученный из функции игры
     //(второй элемент)
-    while ($expressionsAndAnswers) {
-        $pairExpressionAndAnswer = array_pop($expressionsAndAnswers);
-        $question = $pairExpressionAndAnswer['question'];
-        $expectedAnswer = $pairExpressionAndAnswer['expectedAnswer'];
+    while ($questionsAndAnswers) {
+        $pairQuestionAndAnswer = array_pop($questionsAndAnswers);
+        $question = $pairQuestionAndAnswer['question'];
+        $expectedAnswer = $pairQuestionAndAnswer['expectedAnswer'];
 
         line('Question, %s', $question);
 

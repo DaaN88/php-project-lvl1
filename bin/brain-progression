@@ -13,6 +13,6 @@ if (file_exists($autoloadGlobalPath)) {
     require_once $autoloadLocalPath;
 }
 
-use function BrainGames\Games\GameProgression\startGameProgression;
+use function BrainGames\Games\Progression\startGameProgression;
 
 startGameProgression();

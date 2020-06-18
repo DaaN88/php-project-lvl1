@@ -13,6 +13,6 @@ if (file_exists($autoloadGlobalPath)) {
     require_once $autoloadLocalPath;
 }
 
-use function BrainGames\Games\GamePrime\startGamePrime;
+use function BrainGames\Games\Prime\startGamePrime;
 
 startGamePrime();
