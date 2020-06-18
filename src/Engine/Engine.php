@@ -44,18 +44,3 @@ function startGameEngine($ruleGame, $questionsAndAnswers)
 
     return line("Congratulations, %s!", $name);
 }
-
-//проверяем ответ игрока: если ответ цифра - явно преобразуем в цифровое значение
-//если ответ yes - возвращаем true
-function checkedAnswer($verifiableAnswer)
-{
-    if ($verifiableAnswer === 'yes') {
-        return 'yes';
-    } elseif ($verifiableAnswer === 'no') {
-        return 'no';
-    } elseif (is_numeric($verifiableAnswer)) {
-        return (int)$verifiableAnswer;
-    }
-
-    return false;
-}
