@@ -13,34 +13,30 @@ function startEngineGame($messageGame, $expressionsAndAnswers)
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
 
-    $attempt = 0;
-
     //передаем многомерный массив (внутри 3 одномерных массива)
-    //с парой: выражение и ответ;
+    //с парой: вопрос и ответ;
     //извлекаем последний массив из основного;
-    //присваиваем $stringExpression = выражение из массива (ключ извлеченного
-    //массива). Это будет фраза выводимая в приветствии игрока;
-    //$verifiableNumber = это правильный ответ полученный из функции игры
-    //(значение в извлеченном массиве)
-    while ($attempt < 3) {
+    //присваиваем $question = вопрос (первый элемент) из массива;
+    //$expectedAnswer = это правильный ответ полученный из функции игры
+    //(второй элемент)
+    while ($expressionsAndAnswers) {
         $pairExpressionAndAnswer = array_pop($expressionsAndAnswers);
-        $stringExpression = $pairExpressionAndAnswer['stringWithQuestion'];
-        $verifiableNumber = $pairExpressionAndAnswer['stringWithAnswer'];
+        $question = $pairExpressionAndAnswer['question'];
+        $expectedAnswer = $pairExpressionAndAnswer['expectedAnswer'];
 
-        line('Question, %s', $stringExpression);
+        line('Question, %s', $question);
 
-        $answer = prompt('Your answer?');
-        line("%s", $answer);
+        $userAnswer = prompt('Your answer?');
+        line("%s", $userAnswer);
 
-        if (checkedAnswer($answer) === $verifiableNumber) {
+        if ($userAnswer === $expectedAnswer) {
             echo "Correct!" . "\n";
-            $attempt++;
         } else {
             return line(
                 "%s is wrong answer ;(. Correct answer was %s." . "\n" .
                 "Let's try again, %s!" . "\n",
-                $answer,
-                $verifiableNumber,
+                $userAnswer,
+                $expectedAnswer,
                 $name
             );
         }
