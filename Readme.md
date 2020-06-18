@@ -9,7 +9,6 @@
 - ответить, является ли число простым.<br/>
 Установка пакета:<br/>
 - глобально: <code>composer global require anton-shvedov88@yandex.ru</code>;<br/>
-- локально: <code>composer require anton-shvedov88@yandex.ru</code>;<br/>
 Требования:<br/>
 - php-version: от 7.0;<br/>
 - composer-version: от 1.10.6;<br/>
