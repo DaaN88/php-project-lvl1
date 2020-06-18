@@ -18,7 +18,6 @@
       "email": "ant-shvedov@yandex.ru"
     }
   ],
-  "minimum-stability": "dev",
   "require": {
     "wp-cli/php-cli-tools": "^0.11.11"
   },
