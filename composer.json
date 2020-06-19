@@ -8,7 +8,7 @@
       "src/Games/Progression.php",
       "src/Games/Prime.php",
       "src/Engine/Engine.php",
-      "src/Constants/Constants.php"
+      "src/Constants.php"
     ]
   },
   "description": "first project hexlet",
