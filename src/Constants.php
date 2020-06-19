@@ -1,0 +1,4 @@
+<?php
+
+const ROUND_COUNTS = 3;
+const LENGTH_ARITHMETIC_PROGRESSION = 10;
