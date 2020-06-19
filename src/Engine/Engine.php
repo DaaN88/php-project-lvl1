@@ -19,25 +19,23 @@ function startGameEngine($ruleOfGame, $questionsAndAnswers)
     //присваиваем $question = вопрос (первый элемент) из массива;
     //$expectedAnswer = это правильный ответ полученный из функции игры
     //(второй элемент)
-    foreach ($questionsAndAnswers as $pairQuestionAndAnswer) {
-        $question = $pairQuestionAndAnswer['question'];
-        $expectedAnswer = $pairQuestionAndAnswer['expectedAnswer'];
-
+    foreach (
+        $questionsAndAnswers as ['question' => $question, 'expectedAnswer' => $expectedAnswer]
+    ) {
         line('Question, %s', $question);
 
         $userAnswer = prompt('Your answer?');
         line("%s", $userAnswer);
 
         if ($userAnswer === $expectedAnswer) {
-            echo "Correct!" . "\n";
+            line("Correct!");
         } else {
             line(
-                "%s is wrong answer ;(. Correct answer was %s." . "\n" .
-                "Let's try again, %s!" . "\n",
+                "%s is wrong answer ;(. Correct answer was %s.",
                 $userAnswer,
-                $expectedAnswer,
-                $name
+                $expectedAnswer
             );
+            line("Let's try again, %s!", $name);
             return;
         }
     }

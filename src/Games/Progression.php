@@ -8,22 +8,28 @@ function startGameProgression()
 {
     $expressionsAndAnswers = [];
     $ruleOfGame = 'What number is missing in the progression?';
+    $lastElementProgression = LENGTH_ARITHMETIC_PROGRESSION - 1;
 
-    for ($i = 0; $i < GAME_ROUNDS; $i++) {
-        $indexHiddenElement = random_int(0, 9);
-        $firstNumberProgression = random_int(0, 100);
+    for ($i = 0; $i < ROUND_COUNTS; $i++) {
+        $indexHiddenElement = random_int(0, $lastElementProgression);
+        $numberOfProgression = random_int(0, 100);
         $progressionStep = random_int(2, 10);
         $arithmeticProgression = [];
 
         //создаем и заполняем прогрессию
-        for ($k = 0; $k < 10; $k++) {
-            $firstNumberProgression += $progressionStep;
-            $arithmeticProgression[] = $firstNumberProgression;
+        for ($k = 0; $k < LENGTH_ARITHMETIC_PROGRESSION; $k++) {
+            $numberOfProgression += $progressionStep;
+            $arithmeticProgression[] = $numberOfProgression;
         }
 
+        //запоминаем скрытый элемент
+        $rightAnswer = $arithmeticProgression[$indexHiddenElement];
+        //скрываем элемент
+        $arithmeticProgression[$indexHiddenElement] = '..';
+
         $expressionsAndAnswers[$i] = [
-            "question" => implode(' ', hideProgressionElement($arithmeticProgression, $indexHiddenElement)),
-            "expectedAnswer" => (string)$arithmeticProgression[$indexHiddenElement],
+            "question" => implode(' ', $arithmeticProgression),
+            "expectedAnswer" => (string)$rightAnswer,
         ];
     }
 
@@ -31,11 +37,4 @@ function startGameProgression()
         $ruleOfGame,
         $expressionsAndAnswers
     );
-}
-
-function hideProgressionElement($progression, $indexOfHiddenElement)
-{
-    $progression[$indexOfHiddenElement] = '..';
-
-    return $progression;
 }

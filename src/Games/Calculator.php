@@ -2,6 +2,8 @@
 
 namespace BrainGames\Games\Calculator;
 
+use Exception;
+
 use function BrainGames\Engine\Engine\startGameEngine;
 
 function startGameCalc()
@@ -9,7 +11,7 @@ function startGameCalc()
     $expressionsAndAnswers = [];
     $ruleOfGame = 'What is the result of the expression?';
 
-    for ($i = 0; $i < GAME_ROUNDS; $i++) {
+    for ($i = 0; $i < ROUND_COUNTS; $i++) {
         $firstNumber = random_int(1, 1000);
         $secondNumber = random_int(1, 1000);
 
@@ -36,19 +38,14 @@ function startGameCalc()
 
 function evaluateExpression($firstOperand, $operation, $secondOperand)
 {
-    $result = 0;
-
     switch ($operation) {
         case '+':
-            $result = $firstOperand + $secondOperand;
-            break;
+            return $firstOperand + $secondOperand;
         case '-':
-            $result = $firstOperand - $secondOperand;
-            break;
+            return $firstOperand - $secondOperand;
         case '*':
-            $result = $firstOperand * $secondOperand;
-            break;
+            return $firstOperand * $secondOperand;
     }
 
-    return $result;
+    throw new Exception('Wrong operation');
 }
