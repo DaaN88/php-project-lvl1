@@ -4,12 +4,12 @@ namespace BrainGames\Games\Calculator;
 
 use function BrainGames\Engine\Engine\startGameEngine;
 
-function startCalcGame()
+function startGameCalc()
 {
     $expressionsAndAnswers = [];
     $ruleOfGame = 'What is the result of the expression?';
 
-    for ($i = 0; $i < GAME_ROUND; $i++) {
+    for ($i = 0; $i < GAME_ROUNDS; $i++) {
         $firstNumber = random_int(1, 1000);
         $secondNumber = random_int(1, 1000);
 

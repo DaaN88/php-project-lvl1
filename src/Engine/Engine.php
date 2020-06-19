@@ -2,7 +2,6 @@
 
 namespace BrainGames\Engine\Engine;
 
-use function BrainGames\Games\Progression\returnChangedProgression;
 use function cli\line;
 use function cli\prompt;
 
@@ -33,15 +32,16 @@ function startGameEngine($ruleOfGame, $questionsAndAnswers)
         if ($userAnswer === $expectedAnswer) {
             echo "Correct!" . "\n";
         } else {
-            return line(
+            line(
                 "%s is wrong answer ;(. Correct answer was %s." . "\n" .
                 "Let's try again, %s!" . "\n",
                 $userAnswer,
                 $expectedAnswer,
                 $name
             );
+            return;
         }
     }
 
-    return line("Congratulations, %s!", $name);
+    line("Congratulations, %s!", $name);
 }

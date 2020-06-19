@@ -1,3 +1,3 @@
 <?php
 
-const GAME_ROUND = 3;
+const GAME_ROUNDS = 3;

@@ -9,7 +9,7 @@ function startGameProgression()
     $expressionsAndAnswers = [];
     $ruleOfGame = 'What number is missing in the progression?';
 
-    for ($i = 0; $i < GAME_ROUND; $i++) {
+    for ($i = 0; $i < GAME_ROUNDS; $i++) {
         $indexHiddenElement = random_int(0, 9);
         $firstNumberProgression = random_int(0, 100);
         $progressionStep = random_int(2, 10);

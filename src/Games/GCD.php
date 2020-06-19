@@ -4,12 +4,12 @@ namespace BrainGames\Games\GCD;
 
 use function BrainGames\Engine\Engine\startGameEngine;
 
-function startGCDGame()
+function startGameGCD()
 {
     $expressionsAndAnswers = [];
     $ruleOfGame = 'Find the greatest common divisor of given numbers.';
 
-    for ($i = 0; $i < GAME_ROUND; $i++) {
+    for ($i = 0; $i < GAME_ROUNDS; $i++) {
         $firstNumber = random_int(1, 1000);
         $secondNumber = random_int(1, 1000);
 

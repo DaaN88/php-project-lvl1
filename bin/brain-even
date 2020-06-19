@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php
 
+use function BrainGames\Games\EvenOdd\startGameEvenOdd;
+
 // Путь который будет использован при глобальной установке пакета
 $autoloadGlobalPath = __DIR__ . '/../../../autoload.php';
 // Путь для локальной работы с проектом
@@ -11,7 +13,5 @@ if (file_exists($autoloadGlobalPath)) {
 } else {
     require_once $autoloadLocalPath;
 }
-
-use function BrainGames\Games\EvenOdd\startGameEvenOdd;
 
 startGameEvenOdd();
