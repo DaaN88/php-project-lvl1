@@ -15,12 +15,11 @@ function startGameEngine($ruleOfGame, $questionsAndAnswers)
 
     //передаем многомерный массив (внутри 3 одномерных массива)
     //с парой: вопрос и ответ;
-    //извлекаем последний массив из основного;
+    //обходим весь массив и
     //присваиваем $question = вопрос (первый элемент) из массива;
     //$expectedAnswer = это правильный ответ полученный из функции игры
     //(второй элемент)
-    while ($questionsAndAnswers) {
-        $pairQuestionAndAnswer = array_pop($questionsAndAnswers);
+    foreach ($questionsAndAnswers as $pairQuestionAndAnswer) {
         $question = $pairQuestionAndAnswer['question'];
         $expectedAnswer = $pairQuestionAndAnswer['expectedAnswer'];
 
