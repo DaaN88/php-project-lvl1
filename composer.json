@@ -7,7 +7,7 @@
       "src/Games/GCD.php",
       "src/Games/Progression.php",
       "src/Games/Prime.php",
-      "src/Engine/Engine.php",
+      "src/Engine.php",
       "src/Constants.php"
     ]
   },

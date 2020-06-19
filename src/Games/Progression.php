@@ -4,28 +4,29 @@ namespace BrainGames\Games\Progression;
 
 use function BrainGames\Engine\Engine\startGameEngine;
 
+const ARITHMETIC_PROGRESSION_LENGTH = 10;
+
 function startGameProgression()
 {
     $expressionsAndAnswers = [];
     $ruleOfGame = 'What number is missing in the progression?';
-    $lastElementProgression = LENGTH_ARITHMETIC_PROGRESSION - 1;
 
-    for ($i = 0; $i < ROUND_COUNTS; $i++) {
-        $indexHiddenElement = random_int(0, $lastElementProgression);
-        $numberOfProgression = random_int(0, 100);
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
+        $firstNumberOfProgression = random_int(0, 100);
         $progressionStep = random_int(2, 10);
         $arithmeticProgression = [];
 
         //создаем и заполняем прогрессию
-        for ($k = 0; $k < LENGTH_ARITHMETIC_PROGRESSION; $k++) {
-            $numberOfProgression += $progressionStep;
-            $arithmeticProgression[] = $numberOfProgression;
+        for ($k = 1; $k <= ARITHMETIC_PROGRESSION_LENGTH; $k++) {
+            $arithmeticProgression[] = $firstNumberOfProgression + $progressionStep * ($k - 1);
         }
 
+        $indexOfHiddenElement = array_rand($arithmeticProgression);
+
         //запоминаем скрытый элемент
-        $rightAnswer = $arithmeticProgression[$indexHiddenElement];
+        $rightAnswer = $arithmeticProgression[$indexOfHiddenElement];
         //скрываем элемент
-        $arithmeticProgression[$indexHiddenElement] = '..';
+        $arithmeticProgression[$indexOfHiddenElement] = '..';
 
         $expressionsAndAnswers[$i] = [
             "question" => implode(' ', $arithmeticProgression),

@@ -11,7 +11,7 @@ function startGameCalc()
     $expressionsAndAnswers = [];
     $ruleOfGame = 'What is the result of the expression?';
 
-    for ($i = 0; $i < ROUND_COUNTS; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $firstNumber = random_int(1, 1000);
         $secondNumber = random_int(1, 1000);
 

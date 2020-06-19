@@ -9,7 +9,7 @@ function startGamePrime()
     $expressionsAndAnswers = [];
     $ruleOfGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-    for ($i = 0; $i < ROUND_COUNTS; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $number = random_int(0, 1000);
 
         $expressionsAndAnswers[$i] = [

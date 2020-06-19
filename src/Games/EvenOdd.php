@@ -9,7 +9,7 @@ function startGameEvenOdd()
     $expressionsAndAnswers = [];
     $ruleOfGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-    for ($i = 0; $i < ROUND_COUNTS; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $number = random_int(1, 1000);
 
         $expressionsAndAnswers[$i] = [

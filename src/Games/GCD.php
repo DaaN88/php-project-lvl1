@@ -9,7 +9,7 @@ function startGameGCD()
     $expressionsAndAnswers = [];
     $ruleOfGame = 'Find the greatest common divisor of given numbers.';
 
-    for ($i = 0; $i < ROUND_COUNTS; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $firstNumber = random_int(1, 1000);
         $secondNumber = random_int(1, 1000);
 
