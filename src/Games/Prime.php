@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Prime;
 
-use function BrainGames\Engine\Engine\startGameEngine;
+use function BrainGames\Engine\Engine\playGame;
 
 function startGamePrime()
 {
@@ -18,7 +18,7 @@ function startGamePrime()
         ];
     }
 
-    startGameEngine(
+    playGame(
         $ruleOfGame,
         $expressionsAndAnswers
     );

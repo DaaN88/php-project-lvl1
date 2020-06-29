@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\EvenOdd;
 
-use function BrainGames\Engine\Engine\startGameEngine;
+use function BrainGames\Engine\Engine\playGame;
 
 function startGameEvenOdd()
 {
@@ -18,7 +18,7 @@ function startGameEvenOdd()
         ];
     }
 
-    startGameEngine(
+    playGame(
         $ruleOfGame,
         $expressionsAndAnswers
     );

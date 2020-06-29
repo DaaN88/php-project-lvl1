@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\GCD;
 
-use function BrainGames\Engine\Engine\startGameEngine;
+use function BrainGames\Engine\Engine\playGame;
 
 function startGameGCD()
 {
@@ -24,7 +24,7 @@ function startGameGCD()
         ];
     }
 
-    startGameEngine(
+    playGame(
         $ruleOfGame,
         $expressionsAndAnswers
     );

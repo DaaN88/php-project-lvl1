@@ -4,7 +4,7 @@ namespace BrainGames\Games\Calculator;
 
 use Exception;
 
-use function BrainGames\Engine\Engine\startGameEngine;
+use function BrainGames\Engine\Engine\playGame;
 
 function startGameCalc()
 {
@@ -30,7 +30,7 @@ function startGameCalc()
                                      ];
     }
 
-    startGameEngine(
+    playGame(
         $ruleOfGame,
         $expressionsAndAnswers
     );

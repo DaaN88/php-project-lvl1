@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Progression;
 
-use function BrainGames\Engine\Engine\startGameEngine;
+use function BrainGames\Engine\Engine\playGame;
 
 const ARITHMETIC_PROGRESSION_LENGTH = 10;
 
@@ -17,8 +17,8 @@ function startGameProgression()
         $arithmeticProgression = [];
 
         //создаем и заполняем прогрессию
-        for ($k = 1; $k <= ARITHMETIC_PROGRESSION_LENGTH; $k++) {
-            $arithmeticProgression[] = $firstNumberOfProgression + $progressionStep * ($k - 1);
+        for ($k = 0; $k <= ARITHMETIC_PROGRESSION_LENGTH; $k++) {
+            $arithmeticProgression[] = $firstNumberOfProgression + $progressionStep * $k;
         }
 
         $indexOfHiddenElement = array_rand($arithmeticProgression);
@@ -34,7 +34,7 @@ function startGameProgression()
         ];
     }
 
-    startGameEngine(
+    playGame(
         $ruleOfGame,
         $expressionsAndAnswers
     );
