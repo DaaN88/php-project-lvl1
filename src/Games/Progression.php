@@ -17,7 +17,7 @@ function startGameProgression()
         $arithmeticProgression = [];
 
         //создаем и заполняем прогрессию
-        for ($k = 0; $k <= ARITHMETIC_PROGRESSION_LENGTH; $k++) {
+        for ($k = 0; $k < ARITHMETIC_PROGRESSION_LENGTH; $k++) {
             $arithmeticProgression[] = $firstNumberOfProgression + $progressionStep * $k;
         }
 
