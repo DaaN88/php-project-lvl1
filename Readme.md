@@ -1,5 +1,5 @@
 <a href="https://codeclimate.com/github/DaaN88/php-project-lvl1"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
-![php_сodesniffer](https://github.com/DaaN88/php-project-lvl1/workflows/php_%D1%81odesniffer/badge.svg)<br/>
+<a href="https://github.com/DaaN88/php-project-lvl1/actions">![php_сodesniffer](https://github.com/DaaN88/php-project-lvl1/workflows/php_%D1%81odesniffer/badge.svg)</a><br/>
 
 Пакет представляет собой сборник из 5 консольных игр:<br/>
 - четное ли число;<br/>
